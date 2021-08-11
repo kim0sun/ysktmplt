@@ -1,0 +1,41 @@
+---
+title: "ysktmplt"
+subtitle: "Templates for Rmarkdown documents"
+author: 
+ - name: "Youngsun Kim"
+   email: "kim0sun@korea.ac.kr"
+   address: "Department of Statistics \\newline Korea University"
+ - name: "Hwan Chung"
+   email: "hwanch@korea.ac.kr"
+   address: "Department of Statistics \\newline Korea University"
+fontsize: 11pt
+fontfamily: mathpazo
+abstract: \lipsum[1]
+keywords: 
+ - "latent class model"
+ - "topic modeling"
+ - "collaborative filtering"
+ - "multilevel structure"
+output: 
+   ysktmplt::pdf_manuscript:
+      keep_tex: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction 
+\lipsum[1]
+
+# Body
+\lipsum[2]
+
+## Subsection
+\lipsum[2]
+
+### Subsubsection
+\lipsum[2]
+
+# Conclusion
+\lipsum[3]
