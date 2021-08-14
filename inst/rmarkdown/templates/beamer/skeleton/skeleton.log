@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  11 AUG 2021 16:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.8.19)  12 AUG 2021 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,31 +913,31 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 ) (./skeleton.aux)
 \openout1 = `skeleton.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 175.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 173.
+LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 173.
 LaTeX Font Info:    Trying to load font information for LUC+nanummj on input li
-ne 175.
+ne 173.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    ... okay on input line 173.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -994,7 +994,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 )) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box82
-Package hyperref Info: Link coloring OFF on input line 175.
+Package hyperref Info: Link coloring OFF on input line 173.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1006,55 +1006,55 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count343
 )
-LaTeX Info: Redefining \ref on input line 175.
-LaTeX Info: Redefining \pageref on input line 175.
-LaTeX Info: Redefining \nameref on input line 175.
+LaTeX Info: Redefining \ref on input line 173.
+LaTeX Info: Redefining \pageref on input line 173.
+LaTeX Info: Redefining \nameref on input line 173.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 175.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 173.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 175.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 173.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 175.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 173.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 175.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 173.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 175.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 175.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 173.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 175.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 175.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 175.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 173.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 175.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 175.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 175.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 173.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 175.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 175.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 175.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 173.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 175.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 175.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 173.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 175.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 173.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 175.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 175.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 175.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 175.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 175.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 173.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 175.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 173.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1087,14 +1087,14 @@ Package microtype Warning: Command \pickup@font is not defined as expected.
 (microtype)                applied to the document.
 (microtype)                (Hint: Turn on `verbose' mode).
 
-LaTeX Info: Redefining \microtypecontext on input line 175.
+LaTeX Info: Redefining \microtypecontext on input line 173.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 175.
+LaTeX Info: Redefining \showhyphens on input line 173.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1106,14 +1106,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 <ku_emblem.pdf, id=13, 448.67625pt x 449.42906pt>
 File: ku_emblem.pdf Graphic file (type pdf)
 <use ku_emblem.pdf>
-Package pdftex.def Info: ku_emblem.pdf  used on input line 176.
+Package pdftex.def Info: ku_emblem.pdf  used on input line 174.
 (pdftex.def)             Requested size: 85.35826pt x 85.49527pt.
 
-Overfull \vbox (105.49527pt too high) detected at line 176
+Overfull \vbox (105.49527pt too high) detected at line 174
  []
 
 
-Overfull \vbox (21.79993pt too high) detected at line 176
+Overfull \vbox (21.79993pt too high) detected at line 174
  []
 
 [1
@@ -1127,10 +1127,10 @@ blem.pdf>] (./skeleton.toc) [2
 ments}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.195 \end{frame}
+l.193 \end{frame}
                  
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-195.
+193.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4
@@ -1145,7 +1145,7 @@ File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ts}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.225 \end{frame}
+l.223 \end{frame}
                   [8
 
 ] [9
@@ -1161,7 +1161,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{rmarkdown-ele
 ments}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.255 \end{frame}
+l.253 \end{frame}
                   (./skeleton.vrb
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
 .
@@ -1195,17 +1195,17 @@ Package pdftex.def Info: figs/graph-1.pdf  used on input line 9.
 \tf@snm=\write8
 \openout8 = `skeleton.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
 (./skeleton.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 286.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 284.
  ) 
 Here is how much of TeX's memory you used:
- 27453 strings out of 480608
- 521270 string characters out of 5903630
- 782523 words of memory out of 5000000
- 42700 multiletter control sequences out of 15000+600000
+ 27451 strings out of 480608
+ 521222 string characters out of 5903630
+ 782507 words of memory out of 5000000
+ 42698 multiletter control sequences out of 15000+600000
  558948 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,14n,100p,1799b,724s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1216,7 +1216,7 @@ texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2020/texmf-dist
 1/public/lm/lmss9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm
 /lmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.
 pfb>
-Output written on skeleton.pdf (14 pages, 149307 bytes).
+Output written on skeleton.pdf (14 pages, 149348 bytes).
 PDF statistics:
  486 PDF objects out of 1000 (max. 8388607)
  447 compressed objects within 5 object streams

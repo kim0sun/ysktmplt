@@ -151,12 +151,7 @@ $endif$
    sectionpage = $sectionpage$
    $endif$,
    progressbar = frametitle,
-   block = fill,
-   $if(themeoptions)$
-   $for(themeoptions)$
-   $themeoptions$
-   $sep$,
-   $endfor$
+   block = fill
 ]{metropolis}
 
 $if(kotex)$
@@ -164,7 +159,7 @@ $if(kotex)$
 $endif$
 \definecolor{KU}{RGB}{127, 23, 43}
 \setbeamercolor{frametitle}{bg = KU}
-\setbeamercolor{normal text}{fg = KU!75!black, bg=white}
+\setbeamercolor{normal text}{fg = KU!85!black, bg=white}
 \setbeamercolor{example text}{fg = KU!40!red}
 
 \makeatletter
@@ -322,7 +317,6 @@ $if(links-as-notes)$
 \DeclareRobustCommand{\href}[2]{#2\footnote{\url{#1}}}
 $endif$
 $if(strikeout)$
-$-- also used for underline
 \usepackage[normalem]{ulem}
 % Avoid problems with \sout in headers with hyperref
 \pdfstringdefDisableCommands{\renewcommand{\sout}{}}
@@ -330,7 +324,7 @@ $endif$
 
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
-   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+   \setlength{\itemsep}{2pt}\setlength{\parskip}{2pt}}
 $if(numbersections)$
 \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 $else$
@@ -439,9 +433,6 @@ $endif$
 $if(emblem)$
 \titlegraphic{\hfill\includegraphics[width = 3cm]{ku_emblem.pdf}}
 $endif$
-$if(logo)$
-\logo{\includegraphics[width = 2cm]{ku_logo.pdf}}
-$endif$
 
 \begin{document}
 $if(has-frontmatter)$
@@ -451,7 +442,7 @@ $if(title)$
 \frame{\titlepage}
    $if(abstract)$
 \begin{abstract}
-         $abstract$
+   $abstract$
 \end{abstract}
    $endif$
 $endif$

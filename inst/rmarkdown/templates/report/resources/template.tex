@@ -1,18 +1,3 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-$if(colorlinks)$
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-$endif$
-$if(dir)$
-$if(latex-dir-rtl)$
-\PassOptionsToPackage{RTLdocument}{bidi}
-$endif$
-$endif$
-$if(CJKmainfont)$
-\PassOptionsToPackage{space}{xeCJK}
-$endif$
-%
 \documentclass[
 $if(fontsize)$
   $fontsize$,
@@ -346,13 +331,9 @@ $if(subtitle)$
 \makeatother
 \subtitle{$subtitle$}
 $endif$
-\author{
-   $for(author)$\name $author.name$
-   \email $author.email$
-   \addr $author.address$
-   $sep$\AND
-   $endfor$
-}
+$if(author)$
+\author{$author$}
+$endif$
 \date{$date$}
 
 %%% Environment Style %%%%
@@ -369,31 +350,15 @@ $endif$
    \def\AND{\vskip .5em}
    \vskip 1em%
    \@author
-   \vskip 1em}
+   \vskip 1em \hrule}
 }
 \makeatother
 
-%%%% Abstract %%%%
-\renewenvironment{abstract}
-{\hrule \vskip 1ex {\bf \small Abstract \;\;}%
-  \bgroup\noindent\small\noindent\ignorespaces}%
-{\par\egroup \vskip 0.25ex}
-
-\usepackage{lipsum}
-
-%%%% Keyword %%%%
-\newenvironment{keywords}
-{\bgroup \small\noindent{\textit Keywords:}}%
-{\par\egroup\vskip 1.5ex \hrule}
-
 %%%% Section %%%%
 \usepackage{titlesec}
-\titleformat*{\section}{\large\bf}
-\titleformat*{\subsection}{\large\it}
-\titleformat*{\subsubsection}{\large\it}
+\setcounter{secnumdepth}{1}
+\titleformat*{\section}{\large\it}
 \titlespacing{\section}{0pt}{*4}{*1.5}
-\titlespacing{\subsection}{0pt}{*4}{*1.5}
-\titlespacing{\subsubsection}{0pt}{*4}{*1.5}
 
 %%%% Document Begin %%%%
 \begin{document}
@@ -402,36 +367,12 @@ $if(has-frontmatter)$
 $endif$
 $if(title)$
 \maketitle
-$if(abstract)$
-\begin{abstract}
-   $abstract$
-\end{abstract}
-\begin{keywords}
-   $for(keywords)$$keywords$$sep$, $endfor$
-\end{keywords}
 $endif$
-$endif$
+
 $for(include-before)$
    $include-before$
 $endfor$
-$if(toc)$
-$if(toc-title)$
-\renewcommand*\contentsname{$toc-title$}
-$endif$
-{
-$if(colorlinks)$
-   \hypersetup{linkcolor=$if(toccolor)$$toccolor$$else$$endif$}
-$endif$
-   \setcounter{tocdepth}{$toc-depth$}
-   \tableofcontents
-}
-$endif$
-$if(lof)$
-\listoffigures
-$endif$
-$if(lot)$
-\listoftables
-$endif$
+
 $if(linestretch)$
 \setstretch{$linestretch$}
 $endif$
