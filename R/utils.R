@@ -19,7 +19,7 @@ pdf_cv <- function(...) {
 pdf_manuscript <- function(...) {
    tmplt <- system.file("rmarkdown", "templates", "manuscript", "resources", "template.tex",
                         package = "ysktmplt")
-   rmarkdown::pdf_document(template = tmplt, ...)
+   bookdown::pdf_document2(template = tmplt, toc = FALSE, ...)
 }
 
 #' @export
@@ -27,7 +27,7 @@ pdf_manuscript <- function(...) {
 pdf_report <- function(...) {
    tmplt <- system.file("rmarkdown", "templates", "report", "resources", "template.tex",
                         package = "ysktmplt")
-   rmarkdown::pdf_document(template = tmplt, ...)
+   bookdown::pdf_document2(template = tmplt, toc = FALSE, ...)
 }
 
 #' @export
