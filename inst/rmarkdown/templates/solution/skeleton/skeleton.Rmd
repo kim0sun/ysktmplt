@@ -1,19 +1,32 @@
 ---
-title: "STAT000 Assignment 0 Solution"
-author: "Your Name"
+course: "STAT000"
+type: "Assignment 0" # or Final Exam
+solution: true
+author: "Youngsun Kim"
+initial: "Y. Kim"
 date: "The Date"
-output: output_format
+output: ysktmplt::pdf_solution
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+\thispagestyle{headandfoot}
 
-## Exercise 1
+# - Excersise 1.12
+Let \(Y_1\) be the number of successes in \(n = 10\) independent trials
+where each trial results in a success or failure, and \(\pi\), the
+probability of success, remains constant over all trials. Suppose the 4
+possible values of \(\pi\) are \(.20, .40, .60\), and \(.80\). We do not
+wish to favor any value over the others so we make them equally likely.
+We observe \(Y_1 = 7\). Find the posterior distribution by filling in
+the simplified table. 
 
-This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
 
-This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+\question \textbf \large Exercise 2
+
+# 2
+
 
 
 

@@ -26,7 +26,7 @@ $endif$
 $for(classoption)$
   $classoption$$sep$,
 $endfor$
-]{article}
+]{exam}
 
 \usepackage{amsmath,amssymb}
 $if(fontfamily)$
@@ -356,6 +356,13 @@ $endif$
 \date{$date$}
 
 %%% Environment Style %%%%
+\pagestyle{headandfoot}
+\firstpageheadrule
+\firstpagefootrule
+\runningheadrule
+\runningfootrule
+\header{$course$}{$type$ $if(solution)$Solution$endif$}{$initial$}
+\footer{}{}{Page \thepage}
 %%% Title %%%%
 \makeatletter
 \def\@maketitle {
@@ -387,13 +394,15 @@ $endif$
 {\par\egroup\vskip 1.5ex \hrule}
 
 %%%% Section %%%%
-\usepackage{titlesec}
-\titleformat*{\section}{\large\bf}
-\titleformat*{\subsection}{\large\it}
-\titleformat*{\subsubsection}{\large\it}
-\titlespacing{\section}{0pt}{*4}{*1.5}
-\titlespacing{\subsection}{0pt}{*4}{*1.5}
-\titlespacing{\subsubsection}{0pt}{*4}{*1.5}
+% \usepackage{titlesec}
+% \titleformat{\section}{\textbf\large}
+% \titleformat*{\subsection}{\large\it}
+% \titleformat*{\subsubsection}{\large\it}
+% \titlespacing{\section}{0pt}{*4}{*1.5}
+% \titlespacing{\subsection}{0pt}{*4}{*1.5}
+% \titlespacing{\subsubsection}{0pt}{*4}{*1.5}
+\qformat{\large\textbf{Question \thequestion \ }\thequestiontitle \hfill}
+\renewcommand{\subsection}{\titledquestion}
 
 %%%% Document Begin %%%%
 \begin{document}
@@ -439,9 +448,9 @@ $if(has-frontmatter)$
 \mainmatter
 $endif$
 
-
+\begin{questions}
 $body$
-
+\end{questions}
 
 $if(has-frontmatter)$
 \backmatter
