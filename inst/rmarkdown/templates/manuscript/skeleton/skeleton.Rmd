@@ -7,6 +7,7 @@ author:
    address: "Department of Statistics \\newline Korea University"
 fontsize: 11pt
 fontfamily: mathpazo
+kotex: true
 abstract: \lipsum[1]
 keywords: 
  - "keyword 1"

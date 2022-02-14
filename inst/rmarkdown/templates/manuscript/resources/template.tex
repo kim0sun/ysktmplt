@@ -28,7 +28,7 @@ $for(classoption)$
 $endfor$
 ]{article}
 
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,graphicx}
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
@@ -36,6 +36,10 @@ $else$
 $endif$
 $if(linestretch)$
 \usepackage{setspace}
+$endif$
+
+$if(kotex)$
+\usepackage{kotex}
 $endif$
 
 \usepackage{iftex}
