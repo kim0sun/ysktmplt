@@ -1,14 +1,13 @@
 Package: ysktmplt
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: R Markdown Templates Written by kim0sun
+Version: 0.1.0
 Authors@R: 
     person(given = "Youngsun",
            family = "Kim",
            role = c("aut", "cre"),
            email = "kim0sun@korea.ac.kr")
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
