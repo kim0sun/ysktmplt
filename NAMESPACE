@@ -3,5 +3,6 @@
 export(pdf_beamer)
 export(pdf_cv)
 export(pdf_manuscript)
+export(pdf_poster)
 export(pdf_report)
 export(pdf_solution)
