@@ -1,0 +1,313 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+
+\usepackage{amsmath,amssymb,graphicx}
+\usepackage{lmodern}
+
+\usepackage{kotex}
+
+\usepackage{iftex}
+\ifPDFTeX
+   \usepackage[T1]{fontenc}
+   \usepackage[utf8]{inputenc}
+   \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+   \usepackage{unicode-math}
+   \defaultfontfeatures{Scale=MatchLowercase}
+   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+
+
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+   \usepackage[]{microtype}
+   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+   \IfFileExists{parskip.sty}{%
+      \usepackage{parskip}
+   }{% else
+      \setlength{\parindent}{0pt}
+      \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+   \KOMAoptions{parskip=half}
+}
+\makeatother
+
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+   pdftitle={ysktmplt: Article Manuscript},
+   pdfkeywords={keyword 1, keyword 2, keyword 3, \ldots{}},
+   hidelinks,
+   pdfcreator={LaTeX via pandoc}
+}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[top = 1in, bottom = 1in, left = 1in, right = 1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+   \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{ysktmplt: Article Manuscript}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\LARGE\rm #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Templates for Rmarkdown Manuscript}
+\author{
+   \name Author Name
+   \email \href{mailto:author@korea.ac.kr}{\nolinkurl{author@korea.ac.kr}}
+   \addr Department of Statistics \newline Korea University 
+}
+\date{}
+
+%%% Environment Style %%%%
+%%% Title %%%%
+\makeatletter
+\def\@maketitle {
+   \newpage
+   \let \footnote \thanks
+   {\huge\bf \@title \par}%
+   {\large
+   \def\name{\normalsize \bf}
+   \def\email{\hfill \small \sc}
+   \def\addr{\vskip .1em \small \it}
+   \def\AND{\vskip .5em}
+   \vskip 1em%
+   \@author
+   \vskip 1em}
+}
+\makeatother
+
+%%%% Abstract %%%%
+\renewenvironment{abstract}
+{\hrule \vskip 1ex {\bf \small Abstract \;\;}%
+  \bgroup\noindent\small\noindent\ignorespaces}%
+{\par\egroup \vskip 0.25ex}
+
+\usepackage{lipsum}
+
+%%%% Keyword %%%%
+\newenvironment{keywords}
+{\bgroup \small\noindent{\textit Keywords:}}%
+{\par\egroup\vskip 1.5ex \hrule}
+
+%%%% Section %%%%
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bf}
+\titleformat*{\subsection}{\large\it}
+\titleformat*{\subsubsection}{\large\it}
+\titlespacing{\section}{0pt}{*4}{*1.5}
+\titlespacing{\subsection}{0pt}{*4}{*1.5}
+\titlespacing{\subsubsection}{0pt}{*4}{*1.5}
+
+%%%% Document Begin %%%%
+\begin{document}
+\maketitle
+\begin{abstract}
+   \lipsum[1]
+\end{abstract}
+\begin{keywords}
+   keyword 1, keyword 2, keyword 3, \ldots{}
+\end{keywords}
+
+
+\hypertarget{intro}{%
+\section{Introduction}\label{intro}}
+
+Cross-reference: Section \ref{intro}, Section \ref{body} and Section \ref{conc}
+
+\hypertarget{body}{%
+\section{Materials}\label{body}}
+
+This section describes the materials including manuscript, such as equations, lists and figures.
+
+\hypertarget{eq}{%
+\subsection{Equation}\label{eq}}
+
+\begin{itemize}
+\tightlist
+\item
+  Display math
+\end{itemize}
+
+\[
+y = ax + b
+\]
+or
+\[
+y = ax + b
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  inline style math
+\end{itemize}
+
+\(y\) is \(ax + b\)
+
+\begin{itemize}
+\tightlist
+\item
+  latex equation
+\end{itemize}
+
+\begin{equation}
+y = ax + b \label{eq:eq1}
+\end{equation}
+
+\begin{itemize}
+\tightlist
+\item
+  Aligned equation
+\end{itemize}
+
+\begin{eqnarray}
+y &=& ax + b \label{eq:arr1}
+\\
+\mathbf{y} &=& \mathbf{X} \boldsymbol{\beta} \label{eq:arr2}
+\end{eqnarray}
+
+\begin{itemize}
+\tightlist
+\item
+  Equation cross-reference
+  Equation \eqref{eq:eq1}, \eqref{eq:arr1}, and \eqref{eq:arr2} is blah blah.
+\end{itemize}
+
+\hypertarget{list}{%
+\subsection{List}\label{list}}
+
+\hypertarget{enum}{%
+\subsubsection{Enumerate}\label{enum}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  First item
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    1-a
+  \item
+    1-b
+  \end{enumerate}
+\item
+  Second item
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    2-1
+  \item
+    2-2
+  \end{enumerate}
+\item
+  Third item
+
+  \begin{itemize}
+  \tightlist
+  \item
+    item1
+  \item
+    item2
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{item}{%
+\subsubsection{Itemize}\label{item}}
+
+\begin{itemize}
+\tightlist
+\item
+  First item
+\item
+  Second item
+\item
+  Third item
+
+  \begin{itemize}
+  \tightlist
+  \item
+    sub item
+
+    \begin{itemize}
+    \tightlist
+    \item
+      subsub item
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{tab}{%
+\subsubsection{Table}\label{tab}}
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{\label{tab:tab1} Your caption}\tabularnewline
+\toprule
+First Header & Second Header & Third Header \\
+\midrule
+\endfirsthead
+\toprule
+First Header & Second Header & Third Header \\
+\midrule
+\endhead
+First row & Data & Very long data entry \\
+Second row & \textbf{Cenetr} & \emph{Righet} \\
+Third row & Cell that spans across two columns & \\
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  Table cross-reference
+  Table \ref{tab:tab1} is trivial.
+\end{itemize}
+
+\hypertarget{chunk}{%
+\subsection{R chunk}\label{chunk}}
+
+\hypertarget{img}{%
+\subsection{Image}\label{img}}
+
+\hypertarget{conc}{%
+\section{Conclusion}\label{conc}}
+
+\lipsum[3]
+
+
+
+
+
+\end{document}

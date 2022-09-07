@@ -6,7 +6,7 @@ author:
    email: "author@korea.ac.kr"
    address: "Department of Statistics \\newline Korea University"
 fontsize: 11pt
-fontfamily: mathpazo
+# fontfamily: mathpazo
 kotex: true
 abstract: \lipsum[1]
 keywords: 
@@ -24,18 +24,49 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction {#intro}
-Cross-reference: \@ref(intro), \@ref(body), \@ref(conc)
+
+Cross-reference: Section \@ref(intro), Section \@ref(body) and Section \@ref(conc)
+
 
 # Materials {#body}
+
 This section describes the materials including manuscript, such as equations, lists and figures.
 
 ## Equation {#eq}
-\lipsum[2]
 
-### Aligned equation {#align}
+- Display math
+
+$$
+y = ax + b
+$$
+or 
+\[
+y = ax + b
+\]
+
+- inline style math
+
+$y$ is $ax + b$
+
+- latex equation
+
+\begin{equation}
+y = ax + b (\#eq:eq1)
+\end{equation}
+
+- Aligned equation 
+
+\begin{eqnarray}
+y &=& ax + b (\#eq:arr1)
+\\
+\mathbf{y} &=& \mathbf{X} \boldsymbol{\beta} (\#eq:arr2)
+\end{eqnarray}
+
+- Equation cross-reference
+Equation \@ref(eq:eq1), \@ref(eq:arr1), and \@ref(eq:arr2) is blah blah.
+
 
 ## List
-\lipsum[2]
 
 ### Enumerate {#enum}
 1. First item
@@ -57,7 +88,19 @@ This section describes the materials including manuscript, such as equations, li
 
 ### Table {#tab}
 
-## Figure {#fig}
+| First Header  | Second Header | Third Header         |
+| :------------ | :-----------: | -------------------: |
+| First row     | Data          | Very long data entry |
+| Second row    | **Center**    | *Righet*             |
+| Third row     | Cell that spans across two columns  ||
+Table: (\#tab:tab1) Your caption 
+
+- Table cross-reference
+Table \@ref(tab:tab1) is trivial.
+
+## R chunk {#chunk}
+
+## Image {#img}
 
 # Conclusion {#conc}
 \lipsum[3]

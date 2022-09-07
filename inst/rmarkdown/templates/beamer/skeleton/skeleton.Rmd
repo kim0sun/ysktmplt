@@ -11,6 +11,8 @@ toc: true # table of contents
 sectionpage: simple # none, simple progressbar
 emblem: true # KU emblem
 kotex: true # use korean
+left_margin: 25pt
+right_margin: 50pt
 output: 
    ysktmplt::pdf_beamer :
       latex_engine: pdflatex

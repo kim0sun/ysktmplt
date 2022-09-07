@@ -43,6 +43,13 @@ $for(beameroption)$
 \setbeameroption{$beameroption$}
 $endfor$
 
+$if(left_margin)$
+\setbeamersize{
+text margin left  = $left_margin$,
+$if(right_margin)$ text margin right = $right_margin$ $endif$
+}
+$endif$
+
 % Prevent slide breaks in the middle of a paragraph
 \widowpenalties 1 10000
 \raggedbottom
@@ -432,6 +439,11 @@ $endif$
 
 $if(emblem)$
 \titlegraphic{\hfill\includegraphics[width = 3cm]{ku_emblem.pdf}}
+$endif$
+
+$if(bibsize)$
+\def\bibfont{$bibsize$}
+\renewcommand{\bibfont}{$bibsize$}
 $endif$
 
 \begin{document}

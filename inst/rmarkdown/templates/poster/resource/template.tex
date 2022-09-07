@@ -1,4 +1,36 @@
-\documentclass[a0,portrait]{a0poster}
+\PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+$if(colorlinks)$
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+$endif$
+$if(dir)$
+$if(latex-dir-rtl)$
+\PassOptionsToPackage{RTLdocument}{bidi}
+$endif$
+$endif$
+$if(CJKmainfont)$
+\PassOptionsToPackage{space}{xeCJK}
+$endif$
+%
+\documentclass[
+$if(fontsize)$
+   $fontsize$,
+$endif$
+$if(lang)$
+   $babel-lang$,
+$endif$
+$if(papersize)$
+   $papersize$paper,
+$endif$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+$if(size)$
+   $size$
+$else$a0,
+$endif$
+portrait
+]{a0poster}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep = 100pt % This is the amount of white space between the columns in the poster
@@ -10,7 +42,6 @@
 %\usepackage{palatino} % Uncomment to use the Palatino font
 
 \usepackage{graphicx} % Required for including images
-\graphicspath{{figures/}} % Location of the graphics files
 \usepackage{booktabs} % Top and bottom rules for table
 \usepackage[font=normalsize, labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
@@ -33,13 +64,14 @@
 \begin{minipage}[b]{0.75\linewidth}
 \veryHuge
 \color{NavyBlue}
-\textbf{Penalized smoothing method on the unit sphere using intrinsic quadratic spline}
-\\ % Title
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$ \\ % Title
 \\
 \huge
 \color{Black}
-\textbf{Jae-Kyung shin \& Kwan-Young Bak \& Ja-Yong Koo} \\[0.5cm] % Author(s)
-Department of statistics, Korea University \\[0.4cm] % University/organization
+\textbf{$for(author)$$author$$sep$ \and $endfor$} \\[0.5cm] % Author(s)
+$for(institute)$$institute$$sep$ \and $endfor$ \\[0.4cm] % University/organization
 \end{minipage}
 %
 % \begin{minipage}[l]{0.25\linewidth}
@@ -66,201 +98,8 @@ Department of statistics, Korea University \\[0.4cm] % University/organization
 % \color{SaddleBrown} % SaddleBrown color for the introduction
 
 %\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
-\normalsize
-\section*{Introduction}
-Consider a set of spherical data points along the known times points $\{t_i, y_i\}_{i=1}^N$ where $y_i \in \mathbb{S}$ and $t_i \in [0, 1]$.
-The goal of this study is to develop a method that fits a smooth path to the spherical data along the known times.
-To this end, we develop a penalized smoothing method based on a quadratic intrinsic spline and a group penalty controlling smoothness at knots.
-To solve an spherical optimization problem,
-we devise a block coordinate descent algorithm
-based on the Riemannian gradient. Through a numerical experiment, we investigate fitting performance of the group penalized spherical smoothing method.
 
-%----------------------------------------------------------------------------------------
-%	OBJECTIVES
-%----------------------------------------------------------------------------------------
-
-%\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
-
-\section*{Penalized spherical quadratic splines}
-\subsection*{Spherical quadratic spline}
-A quadratic intrinsic spline is constructed by piecing quadratic intrinsic B\'ezier curves in which each is determined by three control points on the unit sphere.
-Define a sequence of knots $\tau_1 < \ldots < \tau_{J+1}$ and control points $\xi = \{\xi_1, \ldots, \xi_{2J+1}\}$.
-A quadratic intrinsic spline with $J$ pieces $\gamma:t \in [0, 1] \rightarrow \mathbb{S}$ is defined as
-$$
-\gamma(t; \xi) =
-\sum_{j = 1}^J \alpha\left( \frac{t - \tau_j}{\tau_{j+1} - \tau_j}; \xi_{2j - 1}, \xi_{2j}, \xi_{2j+1} \right) \mathbb{I}(t \in [\tau_j, \tau_{j+1}]),
-$$
-where $\alpha$ denote a quadratic intrinsic B\'ezier curve. The spherical quadratic B\'ezier curve and the spherical quadratic spline with $J = 2$ are displayed in Figure 1.
-
-\noindent
-\begin{minipage}{\columnwidth}
-\makeatletter
-\newcommand{\@captype}{figure}
-\makeatother
-\centering
-\subfloat[A quadratic B\'ezier curve ($J = 1$)]{%
-
-   \label{fig:evaluation:revenue}%
-} \qquad%
-\subfloat[A quadratic spline ($J = 2$)]{%
-
-   \label{fig:evaluation:avgPrice}%
-}
-\caption{The black line in the left and right  plot show a quadratic intrinsic B\'ezier and spline curves,
-respectively. The blue points and lines represent the control points and the control polygon.}
-\end{minipage}
-\\ \\ \\
-\noindent
-For a given set of data $\{t_i, y_i\}_{i=1}^N$, we consider a spherical least squares problem that minimizes
-$$
-\ell(\xi) = \frac{1}{2} \sum_{i=1}^n
-\mathsf{d}^2(y_i, \gamma(t_i; \xi))
-$$
-where $\mathsf{d}(\cdot, \cdot)$ denotes  the spherical distance.
-
-\subsection*{Group penalization}
-We first describe an intrinsic quadratic spline under specific constraints at knots.
-Denote
-differences of velocity vectors at knots by
-$$
-\mathsf{v}_j =
-\dot{\alpha}
-(0;\xi_{2j+1}, \xi_{2j+2}, \xi_{2j+3}) -
-\dot{\alpha}
-(1;\xi_{2j-1}, \xi_{2j}, \xi_{2j+1}),
-\quad j = 1, \ldots, J-1,
-$$
-and difference of acceleration vectors at knots by
-$$
-\mathsf{a}_j =
-\ddot{\alpha}
-(0; \xi_{2j+1}, \xi_{2j+2}, \xi_{2j+3}) - \ddot{\alpha}
-(1; \xi_{2j-1}, \xi_{2j}, \xi_{2j+1}),
-\quad j = 1, \ldots, J - 1.
-$$
-A spherical quadratic spline with $J = 2$ under the constraints $\mathsf{v}_1 = 0$ and
-$\mathsf{a}_1 = 0$ is displayed in Figure 2.
-
-
-\begin{center}
-
-\captionof{figure}{A quadratic spline under constraints $\mathsf{v}_1 = 0$ and $\mathsf{a}_1 = 0$}
-\end{center}
-\vspace{0.5cm}
-
-Define a group penalty function to control smoothness of a spherical quadratic spline
-at knots by
-$$
-\mathsf{p}(\xi) = \sum_{j=1}^{J-1} \sqrt{\mathsf{v}_j^{\top} \mathsf{v}_j + \mathsf{a}_j^{\top} \mathsf{a}_j}.
-$$
-Consider a penalized objective function given by
-$$
-\ell^{\lambda}(\xi) = \ell(\xi) + \lambda \mathsf{p}(\xi), \quad \xi \in \Omega
-$$
-where $\lambda > 0$ is a complexity parameter.
-As $\lambda$ increases, the spherical quadratic spline gets smoother.
-Obtain a penalized intrinsic quadratic spline (PIQS) given as
-$$
-\gamma(\cdot; \hat{\xi}^{\lambda})
-$$
-where $\hat{\xi}^{\lambda} = \text{argmin}\ \ell^{\lambda}(\xi)$.
-
-%----------------------------------------------------------------------------------------
-%	MATERIALS AND METHODS
-%----------------------------------------------------------------------------------------
-
-\section*{Implementation}
-To obtain $\hat{\xi}^{\lambda}$ for the PIQS, we devise a
-block coordinate descent algorithm based on the Riemannian gradient where each block consists of the three dimensional-coordinates of each control point.
-The process to obtain $\hat{\xi}^{\lambda}$ for a fixed $\lambda$ is summarized by
-\vspace{0.2cm}
-\begin{center}
-\begin{enumerate}
-\item
-Initialize $\tilde{\xi}_1, \ldots, \tilde{\xi}_{2J + 1}$ for control points.
-\vspace{0.2cm}
-\item
-Compute the Riemannian gradient of $\ell^{\lambda}(\xi)$ with respect to $\xi_j$ with the other control points fixed.
-\vspace{0.2cm}
-\item
-Update
-$$
-\tilde{\xi}_j \leftarrow \mathsf{Exp}_{\tilde{\xi}_j} \left[ \tilde{\xi}_j -
-\rho \ \mathsf{grad}_{{\xi}_j} \ell^{\lambda}(\tilde{\xi}_1, \ldots \tilde{\xi}_{j-1},
-\tilde{\xi}_j, \tilde{\xi}_{j+1}, \ldots \tilde{\xi}_{2J + 1}) \right]
-$$
-where $\rho$ denotes a step size.
-\vspace{0.2cm}
-\item
-Repeat 2-3 for $j = 1, \ldots, 2J + 1$
-until a specified criterion is satisfied.
-\end{enumerate}
-\end{center}
-
-
-For a sequence of $\lambda$, we repeat the process and then select an optimal tuning parameter based on a spherical Baysiean information criterion (sBIC).
-
-\vspace{3cm}
-\begin{center}
-
-\captionof{figure}{A description of the Riemannian gradient for updating $\tilde{\xi}_j$.}
-\end{center}
-
-
-%----------------------------------------------------------------------------------------
-%	RESULTS
-%----------------------------------------------------------------------------------------
-
-\section*{Numerical experiment}
-
-We investigate a behavior of the PIQS based on a simulated data example.
-We generate N equispaced time points $t_1, \ldots t_N \in [0, 1]$ and the example curve is set to be a spherical quadratic spline with five control points defined on $[0, 1]$.
-Then the spherical data points $y_1, \ldots, y_N$ along $t_1, \ldots, t_N$ are generated from the
-von Mises-Fisher distribution with the mean direction $\gamma(t_i; \xi)$ and a prespecified concentration parameter.
-The number of initial B\'ezier curves is set to be sufficiently large so various curves are searched along a sequence of complexity parameters.
-We present, in Figure 4,
-the maximal model with the smallest complexity parameter and the optimal fit based on the sBIC.
-When $\lambda$ is small,
-the quadratic spline shows a wiggly fit while it becomes smooth as $\lambda$ increases.
-
-\vspace{2cm}
-
-\begin{minipage}{\columnwidth}
-\makeatletter
-\newcommand{\@captype}{figure}
-\makeatother
-\centering
-\subfloat[Example curve]{%
-
-   \label{fig:evaluation:revenue}%
-} \qquad%
-\subfloat[Maximal fit]{%
-
-   \label{fig:evaluation:revenue}%
-} \qquad%
-\subfloat[Optimal fit]{%
-
-   \label{fig:evaluation:avgPrice}%
-}
-\caption{(a) The example curve (black line) and spherical data points generated from the example curve with random noise (black points). (b) The maximal model with the smallest complexity parameter (blue line). (c) The maximal model with the optimal complexity parameter (blue line).}
-\end{minipage}
-
-%----------------------------------------------------------------------------------------
-%	CONCLUSIONS
-%----------------------------------------------------------------------------------------
-
-% \color{SaddleBrown} % SaddleBrown color for the conclusions to make them stand out
-
-%\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
-
-\section*{Conclusions}
-
-In this study, we developed a penalized smoothing method on the unit sphere to fit to spherical data. A spherical quadratic spline is defined and a group penalization scheme is proposed to control smoothness of the spline in a data-adaptive way.
-To minimize the objective function in terms of control points, we devised a Riemannian gradient based block coordinate descent algorithm.
-An numerical experiment shows that the PIQS fits well to a simulated spherical data.
-
-
-%----------------------------------------------------------------------------------------
+$body$
 
 \end{multicols}
 \end{document}
