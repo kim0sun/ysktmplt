@@ -47,3 +47,19 @@ pdf_poster <- function(...) {
                         package = "ysktmplt")
    rmarkdown::pdf_document(template = tmplt, ...)
 }
+
+#' @export
+thesis_ku <- function(...) {
+   tmplt <- system.file("rmarkdown", "templates", "thesis", "resources", "template.tex",
+                        package = "ysktmplt")
+   out <- rmarkdown::pdf_document(..., template = tmplt, highlight = NULL,
+                        pandoc_args = "--top-level-division=chapter")
+
+   out$knitr$opts_chunk$prompt = TRUE
+   out$knitr$opts_chunk$highlight = FALSE
+   out$knitr$opts_chunk$tidy = FALSE
+   out$knitr$opts_chunk$R.options = list(prompt = " > ", continue = "   ",
+                                         comment = '')
+
+   out
+}

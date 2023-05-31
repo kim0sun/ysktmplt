@@ -1,0 +1,265 @@
+\documentclass[$fontsize$]{report}
+\usepackage{geometry, graphicx, kotex, imakeidx, titlesec, array} % necessary packages
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{amsmath, amsthm, amssymb, mathrsfs, multirow, verbatim} % supplementary packages
+\usepackage{xcolor}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{longtable,booktabs}
+\usepackage{multirow}
+\usepackage{fancyvrb}
+\makeatletter
+\renewcommand{\verbatim@font}{\linespread{1}\usefont{T1}{newtxtt}{m}{n}\slshape}
+\makeatother
+
+\usepackage[charter]{mathdesign}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[nobiblatex]{xurl} % enable linebreak of \url command
+\usepackage{booktabs} % table tool
+\usepackage{ragged2e}
+\usepackage{setspace}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+   {% don't indent paragraphs
+      \setlength{\parindent}{0pt}
+      % turn on hanging indent if param 1 is 1
+      \ifodd #1
+         \let\oldpar\par
+         \def\par{\hangindent=\cslhangindent\oldpar}
+      \fi
+      % set entry spacing
+      \setlength{\parskip}{#2\cslentryspacingunit}
+   }%
+   {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\setlength{\parindent}{15pt}
+\let\tightlist\relax
+
+\geometry{paper=b5paper, left=30mm, right=30mm, top=30mm, bottom=30mm} % set the paper size and the margins
+
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{20pt}{\huge} % chapter style
+\newtheorem{theorem}{Theorem} % theorem environment
+\newtheorem{definition}{Definition} % definition environment
+% if you need similar environments like lemma, corollary or remark, add them all.
+\makeindex % command for making an index chapter
+
+\linespread{1.25} % set the vertical spacing between successive lines (the ratio of the maximal height of a normal font and the base lineskip)
+\renewcommand\arraystretch{1.3} % increase the vertical spacing by 30%
+
+\begin{document}
+%%% cover page for the doctoral dissertation
+% For the master’s degree, delete this page and use the previous page
+\newpage
+\begin{center}
+\pagenumbering{gobble}
+\noindent
+{\fontsize{16pt}{16pt}\selectfont
+$if(doctor)$
+Doctoral Dissertation
+$else$
+Master's Thesis
+$endif$\par}
+\vspace{3cm} % 3cm spacing
+\doublespacing
+{\fontsize{21pt}{21pt}\selectfont $title$ \par}
+\par\vfill % spacing can be adjusted
+\onehalfspacing
+{\fontsize{16pt}{16pt}\selectfont $author.en$ \par}
+\vspace{0.5cm}
+{\fontsize{16pt}{16pt}\selectfont Department of Statistics \par}
+\vspace{1.5cm}
+{\fontsize{18pt}{18pt}\selectfont Graduate School \par}
+\vspace{0.5cm}
+{\fontsize{18pt}{18pt}\selectfont Korea University \par}
+\vspace{1cm}
+{\fontsize{14pt}{14pt}\selectfont $month$ $year$} % the year and month of degree conferment
+\end{center}
+
+\newpage
+\begin{center}
+{\fontsize{21pt}{21pt} \selectfont $title$ \par}
+\par\vfill
+{\fontsize{16pt}{16pt}\selectfont by \par $author.en$ \par} % put the student's name here
+\vspace{1.2cm}
+\rule{.6\textwidth}{0.5pt} % Student signature is required above the line
+\par\vspace{0.7cm}
+{\fontsize{16pt}{18pt}\selectfont
+under the supervision of Professor $supervisor.en$ \par
+\vspace{0.7cm}
+A dissertation submitted in partial fulfillment of \par
+the requirements for the degree of \par
+$if(doctor)$
+Doctor of Philosophy
+$else$
+Master of Science
+$endif$ in statistics\par }
+\vspace{1.0cm}
+{\fontsize{16pt}{16pt}\selectfont Department of Statistics \par }  % You can reduce the character spacing to make the department name on one line. If it takes up more than two lines, please reduce the vertical spacing after the title appropriately.
+\vspace{1.5cm}
+{\fontsize{18pt}{18pt}\selectfont Graduate School \par}
+\vspace{0.5cm}
+{\fontsize{18pt}{18pt}\selectfont Korea University \par}
+\vspace{1cm}
+{\fontsize{14pt}{14pt}\selectfont $month$ $year$} % month and year of the submission deadline for the thesis/dissertation examination copy.
+\end{center}
+
+%%% signature page for the doctoral thesis
+% For the master’s degree, delete this page and use the previous page
+
+\newpage
+\begin{center}
+\vfill
+{\fontsize{16pt}{16pt}\selectfont
+The dissertation of $author.en$ has been approved by the
+$if(doctor)$ dissertation
+$else$ thesis
+$endif$ committee in partial fulfillment of the requirements for the degree of
+$if(doctor)$ Doctor of Philosophy
+$else$ Master of Science
+$endif$ in statistics\par}
+\vspace{1cm}
+{\fontsize{14pt}{14pt}\selectfont $month$ $year$ \par}
+\vfill
+\rule{.6\textwidth}{0.5pt}\par % committee's signature above the line
+{\fontsize{14pt}{14pt}\selectfont Committee Chair: $if(chair)$ $chair$ $else$ $supervisor.en$ $endif$ \par}
+\vspace{1.4cm}
+\rule{.6\textwidth}{0.5pt}\par % committee's signature above the line
+{\fontsize{14pt}{14pt}\selectfont Committee Member: $for(committee)$$committee$$sep$\par}
+\vspace{1.4cm}
+\rule{.6\textwidth}{0.5pt}\par % committee's signature above the line
+{\fontsize{14pt}{14pt}\selectfont Committee Member: $endfor$ \par}
+\vspace{1cm}
+\end{center}
+
+
+%%% English abstract page
+\newpage
+\pagenumbering{roman} % set the page number as roman type from this page on.
+\newgeometry{left=20mm, right=20mm, top=30mm, bottom=30mm} % set the paper size and the margins
+% Margins shall be changed to bottom and top 3 cm, right and left 2 cm from this page forward.
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{center}
+\onehalfspacing
+\LARGE $title$ % put the title here
+\par\vspace{20pt}
+
+\normalsize\doublespacing
+by $author.en$\par % put the student name here
+Department of Statistics\par
+under the supervision of Professor $supervisor.en$ % put the professor's name and the department here
+\par\vspace{20pt}
+\large \textbf{Abstract}
+\end{center}
+\normalsize\doublespacing
+
+$abstract.en$
+
+\par\vspace{20pt}
+\textbf{Keywords}: $for(keywords.en)$$keywords.en$$sep$, $endfor$
+
+%%% Korean abstract page
+\newpage
+\begin{center}
+\onehalfspacing
+\LARGE $title$ % put the title here
+\par\vspace{20pt}
+
+\normalsize\doublespacing
+$author.ko$\par % put the student name here
+통 계 학 과\par % put the professor's name and the department here
+지 도 교 수:  $supervisor.ko$
+\par\vspace{20pt}
+\addcontentsline{toc}{chapter}{국문초록}
+\large \textbf{국문 초록}
+\end{center}
+\normalsize\doublespacing
+
+$abstract.ko$
+
+\par \vspace{20pt}
+\textbf{주제어} : $for(keywords.ko)$$keywords.ko$$sep$, $endfor$
+
+$if(dedication)$
+\newpage
+\begin{center}
+\vspace*{\stretch{1}}
+\setstretch{1.5}
+$dedication$
+\vspace*{\stretch{1}}
+\end{center}
+\doublespacing
+\vfill
+$endif$
+
+
+%%% preface
+$if(preface)$
+\newpage
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+\normalsize
+$preface$
+$endif$
+
+
+%%% acknowledgment
+$if(acknowledge)$
+\newpage
+\chapter*{Acknowledgment}
+\addcontentsline{toc}{chapter}{Acknowledgment}
+\normalsize
+$acknowledge$\par
+$endif$
+
+
+%%% table of contents
+\renewcommand*\contentsname{Table of Contents}
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+
+\bigskip
+
+%%% list of tables
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\bigskip
+% A list of tables shall be included when there are tables in the thesis/dissertation. Table numbering can be continuous throughout the thesis/dissertation or by chapter (e.g., 1.1, 1.2, 2.1, 2.2...).
+
+%%% list of figures
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\bigskip
+% List of figures should be prepared when figures are included in the thesis/dissertation. Figure numbering can be continuous throughout the thesis/dissertation or by chapter (e.g., 1.1, 1.2, 2.1, 2.2...).
+
+%%% nomenclature (or list of symbols)
+$if(nomen)$
+\chapter*{Nomenclature}
+\addcontentsline{toc}{chapter}{Nomenclature}
+$nomen$
+\bigskip
+$endif$
+\newpage
+\pagenumbering{arabic}
+
+$body$
+
+\newpage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+
+\end{document}

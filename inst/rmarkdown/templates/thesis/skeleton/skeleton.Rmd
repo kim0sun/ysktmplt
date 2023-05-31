@@ -1,0 +1,53 @@
+---
+title: "Thesis/Dissertation title"
+author: {en: Author, ko: 홍 길 동}
+supervisor: {en: Supervisor, ko : 지 도 교 수}
+fontsize: 10pt
+month: Feburary
+year: 2099
+doctor: true
+chair: false 
+committee: [committee 1, committee 2, committee 3]
+keywords: 
+   en: [keyword1, keyword2, keyword3]
+   ko: [중심어1, 중심어2, 중심어3]
+abstract: 
+   en: |
+      영문초록
+   ko: |
+      국문초록
+dedication: |
+   You can dedicate your thesis/dissertation  
+   to someone you know either personally or professionally.  
+   It is customary to place the dedication text  
+   in the center of the page without a title heading.  
+   If you do not need this page, delete it.
+acknowledge: 
+nomen: 
+bibliography: bib.bib
+output: ysktmplt::thesis_ku
+---
+
+```{r child = '01-intro.Rmd'}
+```
+
+```{r child = '02-ch2.Rmd'}
+```
+
+```{r child = '03-ch3.Rmd'}
+```
+
+```{r child = '04-ch4.Rmd'}
+```
+
+```{r child = '10-conc.Rmd'}
+```
+
+# References {-}
+\renewcommand\bibname{References}
+\bibliographystyle{chicago}
+\bibliography{dissertation.bib}
+
+\appendix
+```{r child = '99-appendix.Rmd'}
+```
